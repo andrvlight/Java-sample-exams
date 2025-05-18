@@ -11,6 +11,8 @@ public class CarRental {
     private ArrayList<Car> cars;
 
     public CarRental (String filename) {
+        this.cars = new ArrayList<>();
+        
         try (Scanner scanner = new Scanner (new File (filename))) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -19,6 +21,16 @@ public class CarRental {
                     if (cars.length != 2)
                         continue;
                     String brand = cars[0];
+                    boolean validBrand = true;
+                    for (int i = 0; i < brand.length(); i++) {
+                        char ch = brand.charAt(i);
+                        if (!Character.isLetter(ch) && ch != ' ') {
+                            validBrand = false;
+                            break;
+                        }
+                    }
+                    if (!validBrand)
+                        continue;
 
                     String[] platePrice = cars[1].split(",");
                     if (platePrice.length != 2)

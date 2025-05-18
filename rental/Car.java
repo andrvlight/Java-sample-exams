@@ -32,7 +32,7 @@ public class Car {
             return false;
         
         for (int i = 0; i < 3; i++) 
-            if (!Character.isUpperCase(licensePlate.charAt(i)))
+            if (!Character.isUpperCase(licensePlate.charAt(i)) || !(Character.isLetter(licensePlate.charAt(i))))
                 return false;
 
         for (int i = 4; i < 7; i++) 
@@ -56,7 +56,7 @@ public class Car {
         if (!isValidLicensePlate(licensePlate))
             return null;
 
-        if (price < 0 || price > MAX_PRICE)
+        if (price <= 0 || price > MAX_PRICE)
             return null;
 
         Car car = new Car (brand, licensePlate, price);

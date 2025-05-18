@@ -62,7 +62,8 @@ public class CarTest {
         "aBc 123",
         "ABC a12",
         "ABC1 23",
-        "ABC 123"
+        "ABC 123",
+        "A,BC 123"
     })
     public void testIsValidLicensePlate (String licensePlate) {
         boolean invalid = 
