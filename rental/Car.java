@@ -63,7 +63,8 @@ public class Car {
         return car;
     }
 
+    @Override
     public String toString() {
-        return "%s (%s) %5.1f".formatted(this.brand, this.licensePlate, this.price);
+        return "%s (%s) %5.1f EUR".formatted(this.brand, this.licensePlate, this.price);
     }
 }
