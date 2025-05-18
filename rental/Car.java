@@ -27,7 +27,7 @@ public class Car {
             this.price -= 10;
     }
 
-    public boolean isValidLicensePlate (String licensePlate) {
+    public static boolean isValidLicensePlate (String licensePlate) {
         if (licensePlate == null || licensePlate.length() != 7) 
             return false;
         
@@ -45,7 +45,7 @@ public class Car {
         return true;
     }
 
-    public Car make (String brand, String licensePlate, double price) {
+    public static Car make (String brand, String licensePlate, double price) {
         if (brand.length() < 2)
             return null;
 
@@ -56,7 +56,7 @@ public class Car {
         if (!isValidLicensePlate(licensePlate))
             return null;
 
-        if (price < 0 || price > this.MAX_PRICE)
+        if (price < 0 || price > MAX_PRICE)
             return null;
 
         Car car = new Car (brand, licensePlate, price);

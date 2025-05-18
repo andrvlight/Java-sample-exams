@@ -28,17 +28,4 @@ public class CarRentalTestSuite {
 	})
 	public static class FunctionalTests {}
 
-	// All functional tests call this method using @BeforeEach.
-	// This part ensures that numbers are formatted as
-	//     123,456 EUR
-	// and not as
-	//     123.456 EUR
-	// for testing purposes.
-	@BeforeAll
-	public static void setHuLocale() {
-		// older Java
-//		Locale.setDefault(new Locale("hu", "HU"));
-		// Java 21+
-		Locale.setDefault(Locale.of("hu", "HU"));
-	}
 }
