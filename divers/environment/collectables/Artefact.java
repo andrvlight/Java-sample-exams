@@ -11,7 +11,7 @@ public abstract class Artefact implements Marked {
     private boolean rigidStructure;
 
     public Artefact (String locationData, Color color) {
-        if (locationData == null || locationData.size() < 3)
+        if (locationData == null || locationData.length() < 3)
             throw new IllegalArgumentException;
         this.locationData = locationData;
         this.color = color;
