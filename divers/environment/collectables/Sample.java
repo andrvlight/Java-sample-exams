@@ -4,7 +4,7 @@ import environment.marker.Color;
 
 public class Sample extends Artefact {
     
-    private boolean taggged;
+    private boolean tagged;
     
     public Sample(String locationData, Color color) {
         super (locationData, color);
@@ -19,14 +19,14 @@ public class Sample extends Artefact {
     @Override
     public Sample retrieve () {
         if (getRigidStructure || tagged) {
-            length = locationData.length() + color.toString()length();
+            int length = locationData.length() + color.toString()length();
             if (length > 9 && length < 14) 
                 locationData += "#OK";
             else 
                 locationData += "#NO";
         }
 
-        return null;
+        return this;
     }
 
     public void tag() {

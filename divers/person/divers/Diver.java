@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import environment.collectables.Artefact;
 import environment.marker.Color;
+import person.util.WrongArtefact;
 
 public class Diver {
 
@@ -11,13 +12,13 @@ public class Diver {
     private final String teamId;
     private final Color specialityColor;
 
-    public void Diver(Strong teamId, Color color) {
+    public Diver(Strong teamId, Color color) {
         artefacts = new ArrayList<>();
         this.teamId = teamId;
-        this.specialityColor = specialityColor;
+        this.specialityColor = color;
     }
 
-    public void Diver() {
+    public Diver() {
         this.teamId = "T1";
         this.specialityColor = Color.RED;
         artefacts = new ArrayList<>();
@@ -59,7 +60,7 @@ public class Diver {
         if (artefact.getColor() != specialityColor)
             throw new WrongArtefact("Wrong Color");
         
-        Artefact a = artefact.retrieve;
+        Artefact a = artefact.retrieve();
         if (a == null) {
             a.tag();
             a = artefact.retrieve;

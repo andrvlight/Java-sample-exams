@@ -7,7 +7,7 @@ public class Waste extends Artefact {
     private boolean tagged;
 
     public Waste(String locationData, Color color) {
-        super(locationData, environment);
+        super(locationData, color);
     }
 
     public void extendLocationData(String locationData) {
